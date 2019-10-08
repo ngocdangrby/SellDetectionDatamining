@@ -28,6 +28,7 @@ def pre_process(text):
     text = remove_emoji(text)
     text = remove_common_sign(text)
     text = remove_phone_number(text)
+    text = text.lower()
     return text
 
 
