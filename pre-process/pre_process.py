@@ -11,7 +11,7 @@ def remove_emoji(text):
     return emoji_pattern.sub(r'', text)
 
 def remove_common_sign(text):
-    pattern = "[-.,=()"":*]"
+    pattern = "[-.,=()"":*!?<>;|,^]"
     return re.sub(pattern," ", text)
 
 def remove_phone_number(text):
@@ -23,8 +23,3 @@ def pre_process(text):
     text = remove_common_sign(text)
     text = remove_phone_number(text)
     return text
-
-
-text = "🎁 CODE NGÀY 21/03/2018 ￼ 🎁 ============== ￼ ❗ Mã : CODE2103❗ ============== ★ Lông Vũ Locke ★ Thần Vũ Locke ★ Ngọc Tiến Hóa ★ Ấn Ký Thành Tựu-Cao ★ Ấn Ký Danh Vọng-Cao ★ 100 Bụi Nguyên Tố ★ Bài Tarot ngẫu nhiên ★ Huy Hiệu Chiến trường cổ Đại ★ Cây Thông Noel ============================ * Lưu ý : Code chỉ sử dụng trong ngày. ============================ ￼ 👉 Bạn nhấn vào chữ vip ￼ 👉 rồi nhấn vào nạp thẻ hay hình nạp kim cương ở dưới ￼ 👉 là nó ra trang tài khoản nhé ￼ 👉 rồi nhập code vào mục giftcode nhé"
-print (pre_process(text))
-# " CODE NGÀY 21/03/2018                    Mã   CODE2103                 Lông Vũ Locke  Thần Vũ Locke  Ngọc Tiến Hóa  Ấn Ký Thành Tựu Cao  Ấn Ký Danh Vọng Cao  100 Bụi Nguyên Tố  Bài Tarot ngẫu nhiên  Huy Hiệu Chiến trường cổ Đại  Cây Thông Noel                                Lưu ý   Code chỉ sử dụng trong ngày                                 Bạn nhấn vào chữ vip   rồi nhấn vào nạp thẻ hay hình nạp kim cương ở dưới   là nó ra trang tài khoản nhé   rồi nhập code vào mục giftcode nhé"
