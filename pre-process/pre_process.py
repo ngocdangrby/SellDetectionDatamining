@@ -15,11 +15,19 @@ def remove_common_sign(text):
     return re.sub(pattern," ", text)
 
 def remove_phone_number(text):
+    
     phone_pattern = "\(?(?:\+62|62|0)(?:\d{2,3})?\)?[ .-]?\d{2,4}[ .-]?\d{2,4}[ .-]?\d{2,4}"
-    return re.sub(phone_pattern, ' ', text)
+    return re.sub(phone_pattern, 'sdt', text)
 
+def remove_website_link(text):
+    website_pattern = "http\S+"
+    return re.sub(website_pattern, "website", text.strip())
+    
 def pre_process(text):
+    text = remove_website_link(text)
     text = remove_emoji(text)
     text = remove_common_sign(text)
     text = remove_phone_number(text)
     return text
+
+
