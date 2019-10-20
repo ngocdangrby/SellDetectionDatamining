@@ -17,7 +17,7 @@ Get into pre-process folder:
 cd pre-process
 ```
 
-Pre-process input data
+Pre-process input data. It takes about 30 seconds
 ```python 
 python convert_to_csv.py
 ```
