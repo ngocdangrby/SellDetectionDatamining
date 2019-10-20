@@ -34,7 +34,7 @@ def remove_website_link(text):
     return re.sub(website_pattern, "link_website", text.strip())
 
 def remove_price(text):
-    price_pattern = r"(#\b(\d+\S+|\d+)(k|vnd|vnđ|đ|d|m)\b|\b(\d+\S+|\d+)tr\b|\b\d+(k|vnd|vnđ|đ|d|m)\b)"
+    price_pattern = r"(()#\b(\d+\S+|\d+)(k|vnd|vnđ|đ|d|m)\b|\b(\d+\S+|\d+)tr\b|\b\d+(k|vnd|vnđ|đ|d|m)\b|(?:\d{2,3})?\)?[.,]?\d{2,4}[.,]?\d{0,3}[.,]?\d{3}(k|vnd|vnđ|đ|d|m))"
     return re.sub(price_pattern, "giá_sản_phẩm", text)
 
 def tokenizer_using_crf(text):
