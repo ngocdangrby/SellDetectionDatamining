@@ -37,3 +37,9 @@ df.to_csv("../data/sell.csv", header=False, index=False)
 
 df = pd.DataFrame(non_sell_ls)
 df.to_csv("../data/nonsell.csv", header=False, index=False)
+
+with open('../data/all.txt', 'w', encoding='utf8') as fp:
+    for line in sell_ls:
+        fp.write(line + '\n')
+    for line in non_sell_ls:
+        fp.write(line + '\n')
