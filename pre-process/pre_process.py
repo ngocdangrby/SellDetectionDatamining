@@ -18,7 +18,7 @@ def remove_emoji(text):
     return emoji_pattern.sub(r'', text)
 
 def remove_common_sign(text):
-    pattern = r'[-.,=()\\"\'/:*&%!?<>;|,^+[~\]]'
+    pattern = r'[-.,=()\\"\'/:*&%!?<>;#|,^+[~\]]'
     return re.sub(pattern," ", text)
     
 
@@ -43,6 +43,9 @@ def tokenizer_using_crf(text):
     return tokenized_sent
     # tokens = crf_tokenizer_obj.tokenize(text)
     # print(tokens)
+def remove_number(text):
+    number = r"\b\d+\b"
+    return re.sub(number,"", text)
 
 def pre_process(text):
     text = text.lower()
@@ -51,6 +54,7 @@ def pre_process(text):
     text = remove_website_link(text)
     text = remove_phone_number(text)
     text = remove_common_sign(text)
+    text = remove_number(text)
     text = tokenizer_using_crf(text)
     return text
 
