@@ -48,6 +48,7 @@ def remove_number(text):
     return re.sub(number,"", text)
 
 def pre_process(text):
+    
     text = text.lower()
     text = remove_emoji(text)
     text = remove_price(text)
@@ -57,4 +58,3 @@ def pre_process(text):
     text = remove_number(text)
     text = tokenizer_using_crf(text)
     return text
-

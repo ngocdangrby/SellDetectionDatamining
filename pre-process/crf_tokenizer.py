@@ -82,10 +82,10 @@ def load_data_from_dir(data_path):
 
 
 class CrfTokenizer(BaseTokenizer):
-    def __init__(self, config_root_path="", bi_grams_path='bi_grams.txt', tri_grams_path='tri_grams.txt',
+    def __init__(self, config_root_path="pre-process/", bi_grams_path='bi_grams.txt', tri_grams_path='tri_grams.txt',
                  crf_config_path='crf_config.txt',
                  features_path='crf_features.txt',
-                 model_path='vi-segmentation.crfsuite',
+                 model_path='pre-process/vi-segmentation.crfsuite',
                  load_data_f_file=load_data_from_dir,
                  base_lib='sklearn_crfsuite'):
         """
@@ -366,5 +366,5 @@ def test():
     tokens = crf_tokenizer_obj.tokenize(test_sent)
     print(tokens)
 
-if __name__ == '__main__':
-    test_base()
+# if __name__ == '__main__':
+#     test_base()

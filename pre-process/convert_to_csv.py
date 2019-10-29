@@ -25,7 +25,7 @@ for l in lines:
         sell_ls.append(line[1])
     elif line[0] == NON_SELL:
         non_sell_ls.append(line[1])
-
+one
 pr = lambda x: pre_process.pre_process(x)
 sell_ls = [pr(x) for x in sell_ls]
 non_sell_ls = [pr(x) for x in non_sell_ls]
