@@ -48,7 +48,7 @@ def remove_number(text):
     return re.sub(number,"", text)
 
 def pre_process(text):
-    
+    text = str(text)
     text = text.lower()
     text = remove_emoji(text)
     text = remove_price(text)
